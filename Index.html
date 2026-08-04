@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ইউপি ডিজিটাল সেবা - ড্যাশবোর্ড</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Hind Siliguri', sans-serif; background-color: #f8fafc; }
+    .btn-primary { background: linear-gradient(135deg, #006a4e 0%, #004d39 100%); transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 106, 78, 0.3); }
+    .card { @apply bg-white rounded-3xl shadow-sm border border-gray-100 p-6; }
+    .input-field { @apply w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all bg-gray-50/50; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Sidebar/Header Nav -->
+  <nav class="bg-emerald-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">ইউপি</div>
+        <div>
+          <h1 class="text-lg font-bold leading-tight">০২নং বহেড়াতৈল ইউনিয়ন পরিষদ</h1>
+          <p class="text-xs opacity-70">সখিপুর, টাঙ্গাইল</p>
+        </div>
+      </div>
+      <div class="hidden md:flex gap-6">
+        <a href="#" onclick="showSection('dashboard')" class="hover:text-emerald-300 transition-colors">ড্যাশবোর্ড</a>
+        <a href="#" onclick="showSection('application')" class="hover:text-emerald-300 transition-colors">নতুন আবেদন</a>
+        <a href="#" onclick="showSection('config')" class="hover:text-emerald-300 transition-colors">কনফিগারেশন</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto p-4 md:py-8">
+    
+    <!-- Section: Dashboard -->
+    <div id="dashboardSection" class="section">
+      <div class="bg-emerald-800 rounded-3xl p-8 text-white mb-8 shadow-xl">
+        <h2 class="text-3xl font-bold mb-2">স্বাগতম, অ্যাডমিন</h2>
+        <p class="opacity-80">ডিজিটাল সনদ অটোমেশন সিস্টেমের মূল নিয়ন্ত্রণ কেন্দ্র।</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div onclick="showSection('application')" class="card hover:border-emerald-500 cursor-pointer transition-all">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-4 text-xl">📄</div>
+          <h3 class="font-bold text-gray-800">নতুন সনদ</h3>
+          <p class="text-sm text-gray-500">তাত্ক্ষণিকভাবে নতুন সনদ জেনারেট করুন।</p>
+        </div>
+        <div onclick="showSection('config')" class="card hover:border-emerald-500 cursor-pointer transition-all">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center mb-4 text-xl">⚙️</div>
+          <h3 class="font-bold text-gray-800">কনফিগারেশন</h3>
+          <p class="text-sm text-gray-500">আইডি ও এপিআই সেটিংস পরিবর্তন করুন।</p>
+        </div>
+        <div class="card">
+          <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center mb-4 text-xl">📊</div>
+          <h3 class="font-bold text-gray-800">ডাটাবেস</h3>
+          <p class="text-sm text-gray-500">সকল জারিকৃত সনদের তালিকা দেখুন।</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Application Form -->
+    <div id="applicationSection" class="section hidden">
+      <div class="card mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-2 h-8 bg-emerald-600 rounded-full"></div>
+          <h3 class="text-xl font-bold text-gray-800">নাগরিক সনদ আবেদন</h3>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">আবেদনকারীর নাম</label>
+            <input type="text" id="name" class="input-field" placeholder="নাম লিখুন">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">পিতা/স্বামীর নাম</label>
+            <input type="text" id="father" class="input-field" placeholder="পিতা/স্বামীর নাম">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">মাতার নাম</label>
+            <input type="text" id="mother" class="input-field" placeholder="মাতার নাম">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">সনদের ধরন</label>
+            <select id="type" class="input-field">
+              <option value="নাগরিকত্ব সনদ">নাগরিকত্ব সনদ</option>
+              <option value="চারিত্রিক সনদ">চারিত্রিক সনদ</option>
+              <option value="উত্তরাধিকার সনদ">উত্তরাধিকার সনদ</option>
+              <option value="ভূমিহীন সনদ">ভূমিহীন সনদ</option>
+              <option value="অবিবাহিত সনদ">অবিবাহিত সনদ</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">গ্রাম</label>
+            <input type="text" id="village" class="input-field" placeholder="গ্রামের নাম">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">ওয়ার্ড নম্বর</label>
+            <select id="ward" class="input-field">
+              <option value="০১">০১</option><option value="০২">০২</option><option value="০৩">০৩</option>
+              <option value="০৪">০৪</option><option value="০৫">০৫</option><option value="০৬">০৬</option>
+              <option value="০৭">০৭</option><option value="০৮">০৮</option><option value="০৯">০৯</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-amber-50 rounded-2xl border border-amber-100 flex gap-4">
+          <input type="checkbox" id="agreement" class="w-5 h-5 mt-1 rounded text-emerald-700">
+          <label for="agreement" class="text-sm text-amber-900">আমি অঙ্গীকার করছি যে বর্ণিত সকল তথ্য সঠিক। ভুল তথ্যের জন্য কর্তৃপক্ষ আইনানুগ ব্যবস্থা নিতে পারবে।</label>
+        </div>
+
+        <button onclick="submitApplication()" id="submitBtn" class="w-full mt-8 btn-primary text-white font-bold py-4 rounded-2xl shadow-lg flex items-center justify-center gap-2">
+          <span>সনদ জেনারেট করুন</span>
+        </button>
+      </div>
+
+      <!-- Result Card -->
+      <div id="resultCard" class="hidden card border-2 border-emerald-500 text-center animate-pulse">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">✓</div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">সনদ প্রস্তুত!</h3>
+        <p class="text-gray-500 mb-6">নিচের লিঙ্ক থেকে আপনার সনদটি ডাউনলোড করুন।</p>
+        <a id="downloadLink" href="#" target="_blank" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl">পিডিএফ ডাউনলোড</a>
+      </div>
+    </div>
+
+    <!-- Section: Configuration -->
+    <div id="configSection" class="section hidden">
+      <div class="card">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-2 h-8 bg-blue-600 rounded-full"></div>
+          <h3 class="text-xl font-bold text-gray-800">মাস্টার কনফিগারেশন</h3>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">Google Doc Template ID</label>
+            <input type="text" class="input-field" value="1CZwTWGcJudWkOHNZUxZfcZRb9ITDn-oQNU__51w0nQ4">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">Drive Folder ID (PDF Storage)</label>
+            <input type="text" class="input-field" value="1-fndRmFqGTF_Qn1aZRrS6piKXmUEfqNU">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-2">Google Sheet ID (Database)</label>
+            <input type="text" class="input-field" value="1r99sXFfqgaQvzjBlaSLB26pGpn84UclL2_S7FIINn0Q">
+          </div>
+          <button class="bg-gray-800 text-white px-6 py-3 rounded-xl font-bold mt-4">সেটিংস সেভ করুন</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id + 'Section').classList.remove('hidden');
+    }
+
+    function submitApplication() {
+      const btn = document.getElementById('submitBtn');
+      if (!document.getElementById('agreement').checked) {
+        alert('অঙ্গীকারনামায় টিক দিন।');
+        return;
+      }
+
+      const data = {
+        name: document.getElementById('name').value,
+        father: document.getElementById('father').value,
+        mother: document.getElementById('mother').value,
+        type: document.getElementById('type').value,
+        village: document.getElementById('village').value,
+        ward: document.getElementById('ward').value
+      };
+
+      if (!data.name || !data.father) {
+        alert('সব তথ্য পূরণ করুন।');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = 'প্রসেসিং হচ্ছে...';
+
+      google.script.run.withSuccessHandler(function(response) {
+        if (response.success) {
+          document.getElementById('resultCard').classList.remove('hidden');
+          document.getElementById('downloadLink').href = response.url;
+          btn.innerText = 'সনদ জেনারেট করুন';
+          btn.disabled = false;
+        } else {
+          alert('Error: ' + response.error);
+          btn.innerText = 'সনদ জেনারেট করুন';
+          btn.disabled = false;
+        }
+      }).generateCertificate(data);
+    }
+  </script>
+</body>
+</html>
