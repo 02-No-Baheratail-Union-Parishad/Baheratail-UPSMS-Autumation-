@@ -1,0 +1,39 @@
+name: Civic Trust System colors: surface: '#f7faf6' surface-dim: '#d7dbd7' surface-bright: '#f7faf6' surface-container-lowest: '#ffffff' surface-container-low: '#f1f5f0' surface-container: '#ebefea' surface-container-high: '#e5e9e5' surface-container-highest: '#e0e3df' on-surface: '#181d1a' on-surface-variant: '#3f4944' inverse-surface: '#2d312f' inverse-on-surface: '#eef2ed' outline: '#6f7a73' outline-variant: '#bec9c2' surface-tint: '#046c50' primary: '#00503a' on-primary: '#ffffff' primary-container: '#006a4e' on-primary-container: '#92e7c3' inverse-primary: '#83d7b4' secondary: '#bb0027' on-secondary: '#ffffff' secondary-container: '#e41b38' on-secondary-container: '#fffbff' tertiary: '#74302a' on-tertiary: '#ffffff' tertiary-container: '#91473f' on-tertiary-container: '#ffcac3' error: '#ba1a1a' on-error: '#ffffff' error-container: '#ffdad6' on-error-container: '#93000a' primary-fixed: '#9ef4d0' primary-fixed-dim: '#83d7b4' on-primary-fixed: '#002116' on-primary-fixed-variant: '#00513b' secondary-fixed: '#ffdad8' secondary-fixed-dim: '#ffb3b1' on-secondary-fixed: '#410007' on-secondary-fixed-variant: '#92001c' tertiary-fixed: '#ffdad5' tertiary-fixed-dim: '#ffb4aa' on-tertiary-fixed: '#3c0705' on-tertiary-fixed-variant: '#75322b' background: '#f7faf6' on-background: '#181d1a' surface-variant: '#e0e3df' official-green-dark: '#004d39' official-red-light: '#ffebec' paper-texture: '#f8f9fa' border-neutral: '#d1d5db' status-success: '#006a4e' status-pending: '#eab308' status-error: '#f42a41' typography: headline-lg: fontFamily: Hind Siliguri fontSize: 32px fontWeight: '700' lineHeight: 44px headline-lg-mobile: fontFamily: Hind Siliguri fontSize: 24px fontWeight: '700' lineHeight: 32px headline-md: fontFamily: Hind Siliguri fontSize: 24px fontWeight: '600' lineHeight: 32px headline-sm: fontFamily: Hind Siliguri fontSize: 18px fontWeight: '600' lineHeight: 24px body-lg: fontFamily: Inter fontSize: 18px fontWeight: '400' lineHeight: 28px body-md: fontFamily: Inter fontSize: 16px fontWeight: '400' lineHeight: 24px body-sm: fontFamily: Inter fontSize: 14px fontWeight: '400' lineHeight: 20px label-lg: fontFamily: Inter fontSize: 14px fontWeight: '600' lineHeight: 20px letterSpacing: 0.02em label-md: fontFamily: Inter fontSize: 12px fontWeight: '600' lineHeight: 16px letterSpacing: 0.04em bengali-body: fontFamily: Hind Siliguri fontSize: 16px fontWeight: '400' lineHeight: 26px rounded: sm: 0.125rem DEFAULT: 0.25rem md: 0.375rem lg: 0.5rem xl: 0.75rem full: 9999px spacing: unit: 4px xs: 4px sm: 8px md: 16px lg: 24px xl: 32px 2xl: 48px gutter: 24px margin-mobile: 16px margin-desktop: 64px
+Brand & Style
+This design system is engineered for the Union Parishad Automation System, embodying the spirit of "Digital Bangladesh." The brand personality is authoritative, reliable, and accessible, serving as a bridge between high-tech automation and grassroots governance. It aims to evoke a sense of high-trust, officialdom, and institutional stability.
+The design style is Corporate / Modern with a distinct Institutional / Philatelic influence. It utilizes structured layouts, meticulous double-borders, and a subtle grid-paper background texture to mimic the tactile feel of official government stationery while maintaining a clean, digital-first functionalism. The visual language balances patriotic symbolism with systematic efficiency, ensuring that both citizens and administrators feel the weight of legal authenticity in every interaction.
+Colors
+The palette is rooted in the national identity of Bangladesh. Deep Green (#006a4e) serves as the primary driver for navigation, primary actions, and institutional branding, representing growth and stability. National Red (#f42a41) is used sparingly for critical accents, secondary borders, and high-priority status indicators.
+The background uses a near-white Paper Texture (#f8f9fa) with a faint, repeating grid pattern to provide a professional, organized workspace. Neutral tones are kept cool to ensure high contrast for typography. Status colors are mapped directly to the brand's primary and secondary hues to maintain a cohesive visual identity across data tables and badges.
+Typography
+This design system uses a bilingual typographic stack. Hind Siliguri is the primary choice for Bengali text, offering excellent legibility in both administrative headings and dense certificate body text. Inter is used for English text and numerical data to provide a clean, modern, and utilitarian contrast.
+Headlines should prioritize Bengali for official titles, while English acts as a secondary descriptor. For technical data within tables or serial numbers, Inter's geometric clarity ensures no ambiguity. Line heights are slightly increased for Bengali characters to accommodate matras (vowel signs) without crowding.
+Layout & Spacing
+The design system employs a Fixed Grid philosophy for administrative dashboards and a Fluid Grid for citizen-facing forms. Desktop layouts utilize a 12-column grid with 24px gutters, while mobile views collapse to a single column with 16px side margins.
+Spacing follows a strict 4px baseline rhythm to maintain alignment across complex data tables and forms. Vertical spacing between form sections should be generous (32px) to reduce cognitive load during data entry. Certificates themselves follow a "Safe Margin" approach, with a mandatory 48px internal padding to accommodate the official double-border system.
+Elevation & Depth
+To maintain a "government-standard" look, depth is conveyed through Tonal Layers and Low-Contrast Outlines rather than heavy shadows.
+Surface Levels: The base layer is the textured grid paper. Form containers and cards sit on top of this using white backgrounds with a subtle 1px border (#d1d5db).
+Official Borders: Certificates and primary containers use a specific double-line border: a 2px outer red line and a 1px inner green line, separated by 2px of white space.
+Interactive Depth: Buttons use a flat, solid fill. Only primary cards may use a very soft, ambient shadow (4px blur, 5% opacity) to suggest they are "floating" documents ready to be picked up or printed.
+Shapes
+The shape language is conservative and professional. A Soft (0.25rem) roundedness is applied to standard UI elements like input fields, buttons, and badges. This provides a modern touch without sacrificing the "serious" nature of a government application.
+Large containers like cards use rounded-lg (0.5rem), while circular icons for certificate categories (as seen in the taxonomy references) are the only elements allowed to use full 100% rounding to create a "seal-like" appearance.
+Components
+Buttons
+Primary buttons are solid Green (#006a4e) with white Inter Bold text. Secondary buttons use a Green 1px outline. Danger/Delete actions use solid Red (#f42a41).
+Input Fields
+Inputs must have clear, top-aligned labels. Use a white background with a 1px #d1d5db border. On focus, the border transitions to 2px Primary Green. Use Hind Siliguri for placeholder text to assist native speakers.
+Status Badges
+Badges are pill-shaped with a low-opacity background of the status color and high-opacity text.
+Approved: Light Green bg / Deep Green text.
+Rejected/Error: Light Red bg / Red text.
+Pending: Light Yellow bg / Amber text.
+Data Tables
+Tables are high-density. Headers use a solid Green background with white text. Rows use alternating white and #f8f9fa stripes. Use thin #d1d5db vertical dividers to maintain the "ledger" feel.
+Certificates
+The core component of the system. It must include:
+Double-Border: Red (outer) and Green (inner).
+Watermark: A centered, 10% opacity Bangladesh Govt. seal.
+QR Code: Bottom-left alignment for digital verification.
+Authority Block: Dual-signature area for Chairman (Bengali left, English right).
